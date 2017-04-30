@@ -47,3 +47,7 @@ bld/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
+bin
+obj
+*.dll
+*.pdb
