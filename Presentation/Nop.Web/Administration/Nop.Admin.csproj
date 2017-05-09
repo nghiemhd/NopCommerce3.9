@@ -2496,6 +2496,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Roxy_Fileman\tmp\" />
+    <Folder Include="Models\BizManagement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shipping\EditProductAvailabilityRange.cshtml" />

@@ -124,6 +124,7 @@
       <HintPath>..\..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -174,6 +175,26 @@
     <Compile Include="Authentication\External\UserClaims.cs" />
     <Compile Include="Authentication\External\IClaimsTranslator.cs" />
     <Compile Include="Authentication\External\OpenAuthenticationParameters.cs" />
+    <Compile Include="BizManagement\CommonService.cs" />
+    <Compile Include="BizManagement\GeneralLedgerService.cs" />
+    <Compile Include="BizManagement\ICommonService.cs">
+      <DependentUpon>CommonService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizManagement\IGeneralLedgerService.cs">
+      <DependentUpon>GeneralLedgerService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizManagement\IInventoryService.cs">
+      <DependentUpon>InventoryService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizManagement\InventoryService.cs" />
+    <Compile Include="BizManagement\IPurchaseInvoiceService.cs">
+      <DependentUpon>PurchaseInvoiceService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizManagement\ISalesOrderService.cs">
+      <DependentUpon>SalesOrderService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BizManagement\PurchaseInvoiceService.cs" />
+    <Compile Include="BizManagement\SalesOrderService.cs" />
     <Compile Include="Blogs\BlogService.cs" />
     <Compile Include="Blogs\BlogExtensions.cs" />
     <Compile Include="Blogs\IBlogService.cs" />

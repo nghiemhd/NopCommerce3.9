@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -352,6 +353,29 @@ namespace Nop.Core
             string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
             path = path.Replace("~/", "").TrimStart('/').Replace('/', '\\');
             return Path.Combine(baseDirectory, path);
-        }        
+        }
+
+        /// <summary>
+        /// Display enum value
+        /// </summary>
+        /// <param name="value">Enum value</param>
+        /// <returns>Name of DisplayAttribute</returns>
+        public static string DisplayForEnumValue(Object value)
+        {
+            Type enumType = value.GetType();
+            var fieldInfo = enumType.GetField(value.ToString());
+            if (fieldInfo != null)
+            {
+                DisplayAttribute displayAtt = (DisplayAttribute)fieldInfo
+                    .GetCustomAttributes(typeof(DisplayAttribute), false)
+                    .FirstOrDefault();
+
+                return displayAtt.GetName();
+            }
+            else
+            {
+                return null;//string.Format("Can't Get Display Text From Enum {0} With Value = {1}",enumType.Name,value);
+            }
+        }
     }
 }
